@@ -222,3 +222,36 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.host {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+
+}
+
+.post {
+  display: grid;
+  grid-template-areas: "i t c";
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10%;
+  border: 2px dotted;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  background-color:beige;
+
+}
+
+.post  {
+  margin: 10px;
+}
