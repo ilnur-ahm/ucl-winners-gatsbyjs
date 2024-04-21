@@ -15,23 +15,29 @@ const SinglePost = ({ data }) => {
     return (
         <Layout>
             <div>
-                <h1>{team}</h1>
-                <div>
+                <h1 className="teamName">{team}</h1>
+                <div className="teamPage">
+                <div className="teamImg">
                     <GatsbyImage image={img} alt={{ team } + ' logo'} />
                 </div>
-                <div>
-                    {country}
+                <div className="teamInfo">
+                    <h3>Country: {country}</h3>
+                    <h3>Количество кубков: {cupsCount}</h3>
                 </div>
-                <div>
-                    {cupsCount}
-                </div>
-                <div dangerouslySetInnerHTML={{__html: html}}/>
+                <div className="teamText" dangerouslySetInnerHTML={{__html: html}}/>
+            </div>
             </div>
         </Layout>
     )
 }
 
-export const Head = () => <Seo title="Seo title" />
+export const Head = ({ data }) => {
+  const { team } = data.markdownRemark.frontmatter
+  return (
+    <Seo title={team} />
+
+  )
+}
 
 export default SinglePost
 
@@ -46,7 +52,7 @@ query PostQuery($title: String) {
         cupsCount
         image {
           childImageSharp {
-            gatsbyImageData(width: 150)
+            gatsbyImageData(height: 300)
           }
         }
       }

@@ -248,10 +248,22 @@ pre tt:after {
   justify-items: center;
   align-items: center;
   align-content: center;
-  background-color:beige;
+  background-color:lightblue;
 
 }
 
-.post  {
-  margin: 10px;
+.teamPage{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10%;
+  row-gap: 20%;
+}
+
+.teamName{
+  text-align: center;
+}
+
+.teamText h1  {
+  display: none;
 }
